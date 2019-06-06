@@ -1,4 +1,4 @@
-Automate-The-Deployment-And-Of-A-Consul-Cluster-Using-Terraform 
+**Deploy-Consul-Cluster-Using-Terraform-Modules-On-AWS** 
 
 ********Prerequisite*********
 *   1. Terraform            *
@@ -7,6 +7,20 @@ Automate-The-Deployment-And-Of-A-Consul-Cluster-Using-Terraform
 *   4. AWS CLI              *
 *   5. Git Command line     *
 *****************************
+
+
+## What's a Module?
+
+A Module is a canonical, reusable, best-practices definition for how to run a single piece of infrastructure, such
+as a database or server cluster. Each Module is created using [Terraform](https://www.terraform.io/), and
+includes automated tests, examples, and documentation. It is maintained both by the open source community and
+companies that provide commercial support.
+
+Instead of figuring out the details of how to run a piece of infrastructure from scratch, you can reuse
+existing code that has been proven in production. And instead of maintaining all that infrastructure code yourself,
+you can leverage the work of the Module community to pick up infrastructure improvements through
+a version number bump.
+
 
 
  Consul AWS Module
@@ -51,18 +65,4 @@ To deploy Consul clients for production using this repo:
    address(es) for a service `foo` registered in Consul (all other domain names will be continue to resolve using the
    default resolver on the OS).
 
-
-
-
-## What's a Module?
-
-A Module is a canonical, reusable, best-practices definition for how to run a single piece of infrastructure, such
-as a database or server cluster. Each Module is created using [Terraform](https://www.terraform.io/), and
-includes automated tests, examples, and documentation. It is maintained both by the open source community and
-companies that provide commercial support.
-
-Instead of figuring out the details of how to run a piece of infrastructure from scratch, you can reuse
-existing code that has been proven in production. And instead of maintaining all that infrastructure code yourself,
-you can leverage the work of the Module community to pick up infrastructure improvements through
-a version number bump.
 
