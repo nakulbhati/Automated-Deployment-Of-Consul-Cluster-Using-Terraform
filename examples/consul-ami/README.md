@@ -1,7 +1,7 @@
 # Consul AMI
 
-This folder shows an example of how to use the [install-consul](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules/install-consul) and 
-[install-dnsmasq](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules/install-dnsmasq) modules with [Packer](https://www.packer.io/) to create [Amazon Machine 
+This folder shows an example of how to use the [install-consul](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules/install-consul) and 
+[install-dnsmasq](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/install-dnsmasq) modules with [Packer](https://www.packer.io/) to create [Amazon Machine 
 Images (AMIs)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) that have Consul and Dnsmasq installed on 
 top of:
  
@@ -12,10 +12,10 @@ These AMIs will have [Consul](https://www.consul.io/) installed and configured t
 boot-up. They also have [Dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) installed and configured to use 
 Consul for DNS lookups of the `.consul` domain (e.g. `foo.service.consul`) (see [registering 
 services](https://www.consul.io/intro/getting-started/services.html) for instructions on how to register your services
-in Consul). To see how to deploy this AMI, check out the [consul-cluster example](https://github.com/hashicorp/terraform-aws-consul/tree/master/examples/root-example). 
+in Consul). To see how to deploy this AMI, check out the [consul-cluster example](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/examples/root-example). 
 
 For more info on Consul installation and configuration, check out the 
-[install-consul](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules/install-consul) and [install-dnsmasq](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules/install-dnsmasq) documentation.
+[install-consul](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules/install-consul and [ihttps://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/install-dnsmasq) documentation.
 
 ## Dependencies
 1.  AWSCLI must be installed on the base AMI in order for run-consul to run
@@ -37,7 +37,7 @@ To build the Consul AMI:
 1. Run `packer build consul.json`.
 
 When the build finishes, it will output the IDs of the new AMIs. To see how to deploy one of these AMIs, check out the
-[consul-cluster example](https://github.com/hashicorp/terraform-aws-consul/tree/master/examples/root-example).
+[consul-cluster example](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/examples/root-example).
 
 
 
