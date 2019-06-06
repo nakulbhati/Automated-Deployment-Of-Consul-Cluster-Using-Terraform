@@ -8,7 +8,7 @@
 *   5. Git Command line     *
 *****************************
 
-**This is an end to end automated deployemnt repo for consul cluster having 3 Server and 6 Clients node in 3 diffrent availability zone.
+This repo is based on Terraform's resuable module registry and suitable for any custom requirement, it also include an example repo for highly secure and encrypted module with custom parameters for consul cluster deployment.    
 
 
 ## What's a Module?
