@@ -56,10 +56,10 @@ To deploy Consul servers for production using this repo:
 
 To deploy Consul clients for production using this repo:
 
-1. Use the [install-consul module](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules/install-consul) to install Consul alongside your application code.
-1. Before booting your app, execute the [run-consul script](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules/run-consul) with `--client` flag.
+1. Use the [install-consul module](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules/install-consul) to install Consul alongside your application code.
+1. Before booting your app, execute the [run-consul script](hhttps://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules/run-consul) with `--client` flag.
 1. Your app can now use the local Consul agent for service discovery and key/value storage.
-1. Optionally, you can use the [install-dnsmasq module](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules/install-dnsmasq) to configure Consul as the DNS for a
+1. Use the [install-dnsmasq module](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/install-dnsmasq) to configure Consul as the DNS for a
    specific domain (e.g. `.consul`) so that URLs such as `foo.service.consul` resolve automatically to the IP
    address(es) for a service `foo` registered in Consul (all other domain names will be continue to resolve using the
    default resolver on the OS).
