@@ -37,16 +37,15 @@ quorum](https://www.consul.io/docs/internals/consensus.html), and a larger numbe
 
 This repo has the following folder structure:
 
-* [modules](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules): This folder contains several standalone, reusable, production-grade modules that you can use to deploy Consul.
-* [examples](https://github.com/hashicorp/terraform-aws-consul/tree/master/examples): This folder shows examples of different ways to combine the modules in the `modules` folder to deploy Consul.
-* [test](https://github.com/hashicorp/terraform-aws-consul/tree/master/test): Automated tests for the modules and examples.
-* [root folder](https://github.com/hashicorp/terraform-aws-consul/tree/master): The root folder is *an example* of how to use the [consul-cluster module](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules/consul-cluster)
+* [modules](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules): This folder contains several standalone, reusable, production-grade modules that you can use to deploy Consul.
+* [examples](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/examples): This folder shows examples of different ways to combine the modules in the `modules` folder to deploy Consul.
+* [root folder](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/examples/root-example): The root folder is *an example* of how to use the [consul-cluster module](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules/consul-cluster)
 
-  module to deploy a [Consul](https://www.consul.io/) cluster in [AWS](https://aws.amazon.com/). The Terraform Registry requires the root of every repo to contain Terraform code, so I've put one of the examples there. This example is great for learning and experimenting, but for production use, please use the underlying modules in the [modules folder](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules) directly.
+  module to deploy a [Consul](https://www.consul.io/) cluster in [AWS](https://aws.amazon.com/). The Terraform Registry requires the root of every repo to contain Terraform code, so I've put one of the examples there. 
 
 To deploy Consul servers for production using this repo:
 
-1. Create a Consul AMI using a Packer template that references the [install-consul module](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules/install-consul).
+1. Create a Consul AMI using a Packer template that references the [install-consul module](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules/install-consul).
    Here is an [example Packer template](https://github.com/hashicorp/terraform-aws-consul/tree/master/examples/consul-ami#quick-start).
 
 
