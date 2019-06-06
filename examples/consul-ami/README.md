@@ -14,9 +14,6 @@ Consul for DNS lookups of the `.consul` domain (e.g. `foo.service.consul`) (see 
 services](https://www.consul.io/intro/getting-started/services.html) for instructions on how to register your services
 in Consul). To see how to deploy this AMI, check out the [consul-cluster example](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/examples/root-example). 
 
-For more info on Consul installation and configuration, check out the 
-[install-consul](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules/install-consul and [ihttps://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/install-dnsmasq) documentation.
-
 ## Dependencies
 1.  AWSCLI must be installed on the base AMI in order for run-consul to run
 1.  Git CAN be installed on the base AMI if you want to use clone commands
