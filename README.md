@@ -1,7 +1,12 @@
 Automate-The-Deployment-And-Of-A-Consul-Cluster-Using-Terraform 
 
-
-
+********Prerequisite*********
+*   1. Terraform            *
+*   2. Pakcer               *
+*   3. AWS Account          *
+*   4. AWS CLI              *
+*   5. Git Command line     *
+*****************************
 
 
  Consul AWS Module
