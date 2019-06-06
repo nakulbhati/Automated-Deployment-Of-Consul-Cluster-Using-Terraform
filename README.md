@@ -46,7 +46,7 @@ This repo has the following folder structure:
 To deploy Consul servers for production using this repo:
 
 1. Create a Consul AMI using a Packer template that references the [install-consul module](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules/install-consul).
-   Here is an [example Packer template](https://github.com/hashicorp/terraform-aws-consul/tree/master/examples/consul-ami#quick-start).
+   Here is an [example Packer template](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/examples/consul-ami).
 
 
 2. Deploy that AMI across an Auto Scaling Group using the Terraform [consul-cluster module](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules/consul-cluster)
