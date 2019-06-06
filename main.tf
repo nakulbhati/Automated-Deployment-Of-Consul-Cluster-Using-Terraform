@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------------------------------------------------------------
 # DEPLOY A CONSUL CLUSTER IN AWS
-# These templates show an example of how to use the consul-cluster module to deploy Consul in AWS. We deploy two Auto
+# In this example of how to use the consul-cluster module to deploy Consul in AWS. We deploy two Auto
 # Scaling Groups (ASGs): one with a small number of Consul server nodes and one with a larger number of Consul client
 # nodes. Note that these templates assume that the AMI you provide via the ami_id input variable is built from
 # the examples/consul-ami/consul.json Packer template.
@@ -19,9 +19,6 @@ terraform {
 # latest AMI so that a simple "terraform apply" will just work without the user needing to manually build an AMI and
 # fill in the right value.
 #
-# !! WARNING !! These exmaple AMIs are meant only convenience when initially testing this repo. Do NOT use these example
-# AMIs in a production setting because it is important that you consciously think through the configuration you want
-# in your own production AMI.
 #
 # NOTE: This Terraform data source must return at least one AMI result or the entire template will fail. See
 # /_ci/publish-amis-in-new-account.md for more information.
@@ -30,7 +27,7 @@ data "aws_ami" "consul" {
   most_recent = true
 
   # If we change the AWS Account in which test are run, update this value.
-# owners = ["265077450612"]
+# owners = ["265077450612"] repalce the owner with your user account if you careat your own AMI
  owners = ["562637147889"]
 
   filter {
@@ -74,8 +71,9 @@ module "consul_servers" {
   vpc_id     = "${data.aws_vpc.default.id}"
   subnet_ids = "${data.aws_subnet_ids.default.ids}"
 
-  # To make testing easier, we allow Consul and SSH requests from any IP address here but in a production
-  # deployment, we strongly recommend you limit this to the IP address ranges of known, trusted servers inside your VPC.
+  # Here I'm allowing Consul and SSH requests from any IP address here but in a production
+  # deployment, we limit this to the IP address ranges of known, trusted servers inside the VPC.
+
   allowed_ssh_cidr_blocks = ["0.0.0.0/0"]
 
   allowed_inbound_cidr_blocks = ["0.0.0.0/0"]
@@ -131,8 +129,7 @@ module "consul_clients" {
   vpc_id     = "${data.aws_vpc.default.id}"
   subnet_ids = "${data.aws_subnet_ids.default.ids}"
 
-  # To make testing easier, we allow Consul and SSH requests from any IP address here but in a production
-  # deployment, we strongly recommend you limit this to the IP address ranges of known, trusted servers inside your VPC.
+  # strongly recommend you limit this to the IP address ranges of known, trusted servers inside the VPC.
   allowed_ssh_cidr_blocks = ["0.0.0.0/0"]
 
   allowed_inbound_cidr_blocks = ["0.0.0.0/0"]
@@ -155,8 +152,7 @@ data "template_file" "user_data_client" {
 
 # ---------------------------------------------------------------------------------------------------------------------
 # DEPLOY CONSUL IN THE DEFAULT VPC AND SUBNETS
-# Using the default VPC and subnets makes this example easy to run and test, but it means Consul is accessible from the
-# public Internet. For a production deployment, we strongly recommend deploying into a custom VPC with private subnets.
+# Use custom VPC with private subnets.
 # ---------------------------------------------------------------------------------------------------------------------
 
 data "aws_vpc" "default" {
