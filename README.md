@@ -2,7 +2,7 @@
 
 ********Prerequisite*********
 *   1. Terraform            *
-*   2. Pakcer               *
+*   2. Packer               *
 *   3. AWS Account          *
 *   4. AWS CLI              *
 *   5. Git Command line     *
@@ -25,7 +25,7 @@ a version number bump.
 
  Consul AWS Module
 
-This repo contains a set of modules in the [modules folder](https://github.com/hashicorp/terraform-aws-consul/tree/master/modules) for deploying a [Consul](https://www.consul.io/) cluster on
+This repo contains a set of modules in the [modules folder](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules) for deploying a [Consul](https://www.consul.io/) cluster on
 [AWS](https://aws.amazon.com/) using [Terraform](https://www.terraform.io/). 
 
 Consul is a distributed, highly-available tool that you can use for service discovery and key/value storage. A Consul cluster typically includes a small number of server nodes, which are responsible for being part of the [consensus
