@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------------------------------------------------------------
 # DEPLOY A CONSUL CLUSTER IN AWS
-# In this example of how to use the consul-cluster module to deploy Consul in AWS. We deploy two Auto
+# In this example of how to use the consul-cluster module to deploy Consul in AWS. I'hv deployed two Auto
 # Scaling Groups (ASGs): one with a small number of Consul server nodes and one with a larger number of Consul client
 # nodes. Note that these templates assume that the AMI you provide via the ami_id input variable is built from
 # the examples/consul-ami/consul.json Packer template.
