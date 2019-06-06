@@ -5,7 +5,7 @@
 *   2. Packer               *
 *   3. AWS Account          *
 *   4. AWS CLI              *
-*   5. Git Command line     *
+*   5. Git hub              *
 *****************************
 
 This repo is based on Terraform's resuable module registry and suitable for any custom requirement, it also include an example repo for highly secure and encrypted module with custom parameters for consul cluster deployment.    
