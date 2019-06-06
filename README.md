@@ -1,4 +1,4 @@
-**Deploy-Consul-Cluster-Using-Terraform-Modules-On-AWS** 
+## **Deploy-Consul-Cluster-Using-Terraform-Modules-On-AWS** 
 
 ********Prerequisite*********
 *   1. Terraform            *
@@ -7,6 +7,8 @@
 *   4. AWS CLI              *
 *   5. Git Command line     *
 *****************************
+
+**This is an end to end automated deployemnt repo for consul cluster having 3 Server and 6 Clients node in 3 diffrent availability zone.
 
 
 ## What's a Module?
@@ -23,7 +25,7 @@ a version number bump.
 
 
 
- Consul AWS Module
+ **Consul AWS Module
 
 This repo contains a set of modules in the [modules folder](https://github.com/nakulbhati/Automated-Deployment-Of-Consul-Cluster-Using-Terraform/tree/master/modules) for deploying a [Consul](https://www.consul.io/) cluster on
 [AWS](https://aws.amazon.com/) using [Terraform](https://www.terraform.io/). 
