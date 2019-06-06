@@ -68,3 +68,88 @@ To deploy Consul clients for production using this repo:
 
 
 Note: From Consul 0.7.1 new configuration options were added to allow bootstrapping by automatically discovering AWS instances with a given tag key/value at startup. This is game changing because the hard work is done for you - all you need to do is ensure all of the Consul server instances share a tag and are able to communicate with one another.
+
+
+**************************************************************************************************************
+
+ongoing maintenance tasks to carry out
+
+**1. Memory usage
+
+Metric Name	        Description
+mem.total	          Total amount of physical memory (RAM) available on the server.
+mem.used_percent	  Percentage of physical memory in use.
+swap.used_percent	  Percentage of swap space in use.
+
+
+Why they're important: Consul keeps all of its data in memory. If Consul consumes all available memory, it will crash. You should also monitor total available RAM to make sure some RAM is available for other processes, and swap usage should remain at 0% for best performance.
+
+What to look for: If mem.used_percent is over 90%, or if swap.used_percent is greater than 0.
+
+***********************************************************************************************
+
+**2. File descriptors
+
+Metric Name	                Description
+linux_sysctl_fs.file-nr	    Number of file handles being used across all processes on the host.
+linux_sysctl_fs.file-max	  Total number of available file handles.
+
+
+Why it's important:Practically anything Consul does -- receiving a connection from another host, sending data between servers, writing snapshots to disk -- requires a file descriptor handle. If Consul runs out of handles, it will stop accepting connections. See the Consul FAQ for more details.
+
+By default, process and kernel limits are fairly conservative. You will want to increase these beyond the defaults.
+
+What to look for: If file-nr exceeds 80% of file-max
+
+
+************************************************************************************************
+
+**3. CPU usage
+
+
+Metric Name	          Description
+cpu.user_cpu	        Percentage of CPU being used by user processes (such as Consul).
+cpu.iowait_cpu	      Percentage of CPU time spent waiting for I/O tasks to complete.
+
+
+Why they're important: Consul is not particularly demanding of CPU time, but a spike in CPU usage might indicate too many operations taking place at once, and iowait_cpu is critical -- it means Consul is waiting for data to be written to disk, a sign that Raft might be writing snapshots to disk too often.
+
+
+What to look for: if cpu.iowait_cpu greater than 10%.
+
+*************************************************************************************************
+
+
+**4. Network activity - Bytes Recived
+
+
+Metric Name	          Description
+net.bytes_recv	      Bytes received on each network interface.
+net.bytes_sent	      Bytes transmitted on each network interface.
+
+
+Why they're important: A sudden spike in network traffic to Consul might be the result of a misconfigured application client causing too many requests to Consul. This is the raw data from the system, rather than a specific Consul metric.
+
+
+What to look for: Sudden large changes to the net metrics (greater than 50% deviation from baseline).
+
+NOTE: The net metrics are counters, so in order to calculate rates (such as bytes/second), you will need to apply a function such as non_negative_difference.
+
+**************************************************************************************
+
+
+**5. Disk activity
+
+Metric Name	            Description
+diskio.read_bytes	      Bytes read from each block device.
+diskio.write_bytes	    Bytes written to each block device.
+
+Why they're important: If the Consul host is writing a lot of data to disk, such as under high volume workloads, there may be frequent major I/O spikes during leader elections. This is because under heavy load, Consul is checkpointing Raft snapshots to disk frequently.
+
+It may also be caused by Consul having debug/trace logging enabled in production, which can impact performance.
+
+Too much disk I/O can cause the rest of the system to slow down or become unavailable, as the kernel spends all its time waiting for I/O to complete.
+
+What to look for: Sudden large changes to the diskio metrics (greater than 50% deviation from baseline, or more than 3 standard deviations from baseline).
+
+NOTE: The diskio metrics are counters, so in order to calculate rates (such as bytes/second), you will need to apply a function such as non_negative_difference.
