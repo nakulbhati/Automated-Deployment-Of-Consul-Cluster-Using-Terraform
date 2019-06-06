@@ -72,7 +72,7 @@ Note: From Consul 0.7.1 new configuration options were added to allow bootstrapp
 
 **************************************************************************************************************
 
-ongoing maintenance tasks to carry out
+## Ongoing maintenance tasks to carry out
 
 **1. Memory usage
 
