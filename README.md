@@ -67,4 +67,4 @@ To deploy Consul clients for production using this repo:
    default resolver on the OS).
 
 
-**** Note: From Consul 0.7.1 new configuration options were added to allow bootstrapping by automatically discovering AWS instances with a given tag key/value at startup. This is game changing because the hard work is done for you - all you need to do is ensure all of the Consul server instances share a tag and are able to communicate with one another.
+Note: From Consul 0.7.1 new configuration options were added to allow bootstrapping by automatically discovering AWS instances with a given tag key/value at startup. This is game changing because the hard work is done for you - all you need to do is ensure all of the Consul server instances share a tag and are able to communicate with one another.
